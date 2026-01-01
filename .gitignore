@@ -35,3 +35,7 @@ sysinfo.txt
 
 # Addressables
 [Aa]ssets/[Aa]ddressableAssetsData/*/*.bin*
+
+# Unity user-specific settings (do not commit)
+UserSettings/
+
