@@ -1,4 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
+
+
+
+
+// این اسکریپت دوربین را با یک فاصله مشخص به‌صورت نرم دنبال می‌کند تا بازیکن همیشه در مرکز دید باشد.
+//  This script smoothly follows the player using a fixed offset to keep the runner always in view.
 
 public class CameraFollow : MonoBehaviour
 {

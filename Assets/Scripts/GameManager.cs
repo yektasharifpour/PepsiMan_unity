@@ -1,6 +1,12 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
+
+
+// این اسکریپت مدیریت کلی بازی را بر عهده دارد؛ شامل امتیاز، بهترین رکورد، وضعیت  و راه‌اندازی مجدد بازی و گیم اور.
+//  This script manages the overall game state including score, best record, game over UI, and scene restart.
 
 public class GameManager : MonoBehaviour
 {

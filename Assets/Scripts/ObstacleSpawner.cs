@@ -1,4 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
+
+
+
+//  این اسکریپت موانع را به‌صورت تصادفی در یکی از سه لاین جلوی بازیکن ایجاد می‌کند و بعد از گیم اور متوقف می‌شود.
+// This script spawns obstacles ahead of the player in random lanes and stops spawning after game over.
 
 public class ObstacleSpawner : MonoBehaviour
 {

@@ -1,5 +1,11 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+
+
+
+
+// این اسکریپت بخش‌های زمین را به‌صورت پویا جلوی بازیکن تولید می‌کند تا مسیر بی‌نهایت ایجاد شود و زمین‌های قدیمی حذف شوند.
+// This script dynamically spawns ground segments ahead of the player to create an endless track and removes old segments.
 
 public class GroundSpawner : MonoBehaviour
 {

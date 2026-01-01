@@ -1,5 +1,10 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+
+
+
+//  این اسکریپت سیستم آبجکت پولینگ موانع را پیاده‌سازی می‌کند تا به‌جای نابودسازی، موانع دوباره استفاده شوند.
+//  This script implements object pooling for obstacles to reuse them instead of instantiating and destroying repeatedly.
 
 public class ObstaclePool : MonoBehaviour
 {

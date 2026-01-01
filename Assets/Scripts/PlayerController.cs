@@ -1,4 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
+
+
+
+//  این اسکریپت حرکت خودکار بازیکن به جلو، جابه‌جایی بین لاین‌ها و واکنش به برخورد با موانع را کنترل می‌کند.
+// This script controls the player’s forward movement, lane switching, and collision handling with obstacles.
 
 public class PlayerController : MonoBehaviour
 {

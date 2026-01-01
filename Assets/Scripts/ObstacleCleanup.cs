@@ -1,4 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
+
+
+
+
+//  این اسکریپت موانعی که از بازیکن عبور کرده‌اند را به پول برمی‌گرداند تا از مصرف بی‌رویه منابع جلوگیری شود.
+// This script returns obstacles to the pool after they pass behind the player to optimize performance.
 
 public class ObstacleCleanup : MonoBehaviour
 {
