@@ -41,6 +41,13 @@ public class ObstacleSpawner : MonoBehaviour
         int laneIndex = Random.Range(0,3);
         float x = (laneIndex - 1) * _laneOffset;
         Vector3 posToSpawn = new Vector3(x,0.5f,_nextSpawnZ);
-        Instantiate(_obstaclePrefab , posToSpawn , Quaternion.identity);
+        GameObject obstacleObj = Instantiate(_obstaclePrefab, posToSpawn, Quaternion.identity);
+
+        ObstacleCleanup cleanup = obstacleObj.GetComponent<ObstacleCleanup>();
+        if (cleanup != null)
+        {
+            cleanup.setPlayer(_player);
+        }
+
     }
 }
