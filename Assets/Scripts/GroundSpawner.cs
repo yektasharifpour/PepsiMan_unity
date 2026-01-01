@@ -15,6 +15,10 @@ public class GroundSpawner : MonoBehaviour
     [Header("Hierarchy")]
     [SerializeField] private Transform _groundParent;
 
+    [Header("Game")]
+    [SerializeField] private GameManager _gameManager;
+
+
 
     private float _nextSpawnZ = 0f;
     private readonly Queue<GameObject> _aliveSegments = new Queue<GameObject>();
@@ -31,6 +35,7 @@ public class GroundSpawner : MonoBehaviour
     void Update()
     {
         if (_player == null || _groundPrefab == null) return;
+        if (_gameManager != null && _gameManager.isGameOver()) return;
         spawnLoop();
     }
     void spawnLoop()

@@ -19,6 +19,10 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("Pool")]
     [SerializeField] private ObstaclePool _obstaclePool;
 
+    [Header("Game")]
+    [SerializeField] private GameManager _gameManager;
+
+
 
 
     private float _nextSpawnZ = 0f;
@@ -31,7 +35,9 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Update()
     {
+
         if (_player == null || _obstaclePool == null) return;
+        if (_gameManager != null && _gameManager.isGameOver()) return;
         spawnObstacleLoop();
     }
 
