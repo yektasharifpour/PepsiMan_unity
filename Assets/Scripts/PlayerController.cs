@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void playerMovement()
     {
         transform.Translate(Vector3.forward * _forwardSpeed * Time.deltaTime, Space.World);
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             _laneIndex = Mathf.Min(2, _laneIndex + 1);
         }
