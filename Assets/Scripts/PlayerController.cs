@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [Header("laneChangeSpeed")]
     [SerializeField] private float _LaneChangeSpeed = 10f;
     [SerializeField] private float _LaneOffSet = 2f;
+    [Header("Game")]
+    [SerializeField] private GameManager _gameManager;
+
     private int _laneIndex = 1;
     private bool _isDead = false;
 
@@ -41,5 +44,9 @@ public class PlayerController : MonoBehaviour
     public void isDie()
     {
         _isDead = true;
+        if (_gameManager != null)
+        {
+            _gameManager.triggerGameOver();
+        }
     }
 }

@@ -1,0 +1,83 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    [Header("References")]
+    [SerializeField] private PlayerController _playerController;
+    [SerializeField] private Transform _playerTransform;
+
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI _scoreText;
+    [SerializeField] private TextMeshProUGUI _bestText;
+    [SerializeField] private GameObject _gameOverPanel;
+
+    [Header("Score")]
+    [SerializeField] private float _scorePerSecond = 1f;
+
+    private float _scoreTimer = 0f;
+    private int _score = 0;
+    private int _bestScore = 0;
+    private bool _isGameOver = false;
+
+    void Start()
+    {
+        _bestScore = PlayerPrefs.GetInt("Best Score" , 0);
+        updateUI();
+        setGameOverPanel(false);
+    }
+
+    void Update()
+    {
+        if(_isGameOver) return;
+        updateScore();
+        updateBestScoreLive();
+        updateUI();
+    }
+    void updateScore()
+    {
+        _scoreTimer += Time.deltaTime;
+        if (_scoreTimer >= 1f/_scorePerSecond)
+        {
+            _scoreTimer = 0f;
+            _score++;
+
+        }
+    }
+    void updateBestScoreLive()
+    {
+        if (_score <= _bestScore) return;
+        _bestScore = _score;
+        PlayerPrefs.SetInt("Best Score" , _bestScore);
+        PlayerPrefs.Save();
+    }
+
+    void updateUI()
+    {
+        if (_scoreText != null)
+        {
+            _scoreText.text = $"Score: {_score}";
+        }
+        if (_bestText != null)
+        {
+            _bestText.text = $"Best: {_bestScore}";
+        }
+    }
+    void setGameOverPanel(bool isActive)
+    {
+        if (_gameOverPanel != null)
+        {
+            _gameOverPanel.SetActive(isActive);
+        }
+    }
+    public void triggerGameOver()
+    {
+        _isGameOver = true;
+        setGameOverPanel(true);
+    }
+    public void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+}
