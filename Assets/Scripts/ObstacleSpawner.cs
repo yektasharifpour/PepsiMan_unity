@@ -16,6 +16,9 @@ public class ObstacleSpawner : MonoBehaviour
 
     [Header("Hierarchy")]
     [SerializeField] private Transform _obstacleParent;
+    [Header("Pool")]
+    [SerializeField] private ObstaclePool _obstaclePool;
+
 
 
     private float _nextSpawnZ = 0f;
@@ -28,7 +31,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Update()
     {
-        if(_player == null || _obstaclePrefab == null) return;
+        if (_player == null || _obstaclePool == null) return;
         spawnObstacleLoop();
     }
 
@@ -45,12 +48,13 @@ public class ObstacleSpawner : MonoBehaviour
         int laneIndex = Random.Range(0,3);
         float x = (laneIndex - 1) * _laneOffset;
         Vector3 posToSpawn = new Vector3(x,0.5f,_nextSpawnZ);
-        GameObject obstacleObj = Instantiate(_obstaclePrefab, posToSpawn, Quaternion.identity,_obstacleParent);
-
+        GameObject obstacleObj = _obstaclePool.getObstacle();
+        obstacleObj.transform.position = posToSpawn;
+        obstacleObj.transform.rotation = Quaternion.identity;
         ObstacleCleanup cleanup = obstacleObj.GetComponent<ObstacleCleanup>();
         if (cleanup != null)
         {
-            cleanup.setPlayer(_player);
+            cleanup.setReferences(_player, _obstaclePool);
         }
 
     }

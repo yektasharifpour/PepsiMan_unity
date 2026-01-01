@@ -4,6 +4,7 @@ public class ObstacleCleanup : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform _player;
+    [SerializeField] private ObstaclePool _obstaclePool;
     [Header("Cleanup Settings")]
     [SerializeField] private float _destroyBehindDistance = 10f;
   
@@ -17,11 +18,12 @@ public class ObstacleCleanup : MonoBehaviour
     {
         if (transform.position.z < _player.position.z - _destroyBehindDistance)
         {
-            Destroy(gameObject);
+            _obstaclePool.returnObstacle(gameObject);
         }
     }
-    public void setPlayer(Transform player)
+    public void setReferences(Transform player , ObstaclePool pool)
     {
         _player = player;
+        _obstaclePool = pool;
     }
 }

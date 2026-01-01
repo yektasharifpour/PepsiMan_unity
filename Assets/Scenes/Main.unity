@@ -677,6 +677,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395622591}
   m_CullTransparentMesh: 1
+--- !u!1 &590088081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 590088083}
+  - component: {fileID: 590088082}
+  m_Layer: 0
+  m_Name: ObstaclePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &590088082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590088081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a09bcae5647b3429cbdbf2f55c8644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstaclePrefab: {fileID: 7418797777891601338, guid: 85cffe98bfb815745bd4f666b038230a, type: 3}
+  _initialSize: 20
+  _obstacleParent: {fileID: 167351380}
+--- !u!4 &590088083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590088081}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.14321, y: 351.53802, z: -0.50321466}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &711204304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1612,7 @@ MonoBehaviour:
   _maxGap: 7
   _laneOffset: 2
   _obstacleParent: {fileID: 167351380}
+  _obstaclePool: {fileID: 590088082}
 --- !u!1 &1699639812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,3 +2145,4 @@ SceneRoots:
   - {fileID: 1139729235}
   - {fileID: 1821506510}
   - {fileID: 167351380}
+  - {fileID: 590088083}
