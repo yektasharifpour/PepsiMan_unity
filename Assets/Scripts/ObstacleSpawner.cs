@@ -14,6 +14,10 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("lanes")]
     [SerializeField] private float _laneOffset = 2f;
 
+    [Header("Hierarchy")]
+    [SerializeField] private Transform _obstacleParent;
+
+
     private float _nextSpawnZ = 0f;
     void Start()
     {
@@ -41,7 +45,7 @@ public class ObstacleSpawner : MonoBehaviour
         int laneIndex = Random.Range(0,3);
         float x = (laneIndex - 1) * _laneOffset;
         Vector3 posToSpawn = new Vector3(x,0.5f,_nextSpawnZ);
-        GameObject obstacleObj = Instantiate(_obstaclePrefab, posToSpawn, Quaternion.identity);
+        GameObject obstacleObj = Instantiate(_obstaclePrefab, posToSpawn, Quaternion.identity,_obstacleParent);
 
         ObstacleCleanup cleanup = obstacleObj.GetComponent<ObstacleCleanup>();
         if (cleanup != null)
