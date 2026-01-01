@@ -1302,6 +1302,7 @@ MonoBehaviour:
   _bestText: {fileID: 2005113176}
   _gameOverPanel: {fileID: 1137861406}
   _scorePerSecond: 1
+  _obstaclePool: {fileID: 590088082}
 --- !u!4 &1139729235
 Transform:
   m_ObjectHideFlags: 0

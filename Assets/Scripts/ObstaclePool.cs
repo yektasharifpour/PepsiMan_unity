@@ -13,6 +13,8 @@ public class ObstaclePool : MonoBehaviour
     [SerializeField] private Transform _obstacleParent;
 
     private readonly Queue<GameObject> _pool = new Queue<GameObject>();
+    private readonly List<GameObject> _allObstacles = new List<GameObject>();
+
 
     void Awake()
     {
@@ -28,13 +30,21 @@ public class ObstaclePool : MonoBehaviour
 
     GameObject createNewObstacle()
     {
+        GameObject obj;
+
         if (_obstacleParent != null)
         {
-            return Instantiate(_obstaclePrefab, _obstacleParent);
+            obj = Instantiate(_obstaclePrefab, _obstacleParent);
+        }
+        else
+        {
+            obj = Instantiate(_obstaclePrefab);
         }
 
-        return Instantiate(_obstaclePrefab);
+        _allObstacles.Add(obj);
+        return obj;
     }
+
 
     public GameObject getObstacle()
     {
@@ -57,4 +67,18 @@ public class ObstaclePool : MonoBehaviour
         obstacleObj.SetActive(false);
         _pool.Enqueue(obstacleObj);
     }
+    public void resetAllActive()
+    {
+        for (int i = 0; i < _allObstacles.Count; i++)
+        {
+            GameObject obj = _allObstacles[i];
+            if (obj == null) continue;
+
+            if (obj.activeSelf)
+            {
+                returnObstacle(obj);
+            }
+        }
+    }
+
 }

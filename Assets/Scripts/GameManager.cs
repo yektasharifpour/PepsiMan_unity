@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     [Header("Score")]
     [SerializeField] private float _scorePerSecond = 1f;
 
+    [Header("Pool")]
+    [SerializeField] private ObstaclePool _obstaclePool;
+
+
     private float _scoreTimer = 0f;
     private int _score = 0;
     private int _bestScore = 0;
@@ -75,6 +79,10 @@ public class GameManager : MonoBehaviour
     {
         _isGameOver = true;
         setGameOverPanel(true);
+        if (_obstaclePool != null)
+        {
+            _obstaclePool.resetAllActive();
+        }
     }
     public void restart()
     {
