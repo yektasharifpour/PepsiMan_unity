@@ -85,10 +85,7 @@ public class GameManager : MonoBehaviour
     {
         _isGameOver = true;
         setGameOverPanel(true);
-        if (_obstaclePool != null)
-        {
-            _obstaclePool.resetAllActive();
-        }
+    
     }
     public void restart()
     {

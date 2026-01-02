@@ -132,19 +132,7 @@ public class ObstaclePool : MonoBehaviour
     }
 
 
-    public void resetAllActive()
-    {
-        for (int i = 0; i < _allObstacles.Count; i++)
-        {
-            GameObject obj = _allObstacles[i];
-            if (obj == null) continue;
-
-            if (obj.activeSelf)
-            {
-                returnObstacle(obj);
-            }
-        }
-    }
+  
 
 }
 

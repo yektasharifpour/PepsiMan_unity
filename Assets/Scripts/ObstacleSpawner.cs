@@ -70,7 +70,7 @@ public class ObstacleSpawner : MonoBehaviour
         ObstacleCleanup cleanup = obstacleObj.GetComponent<ObstacleCleanup>();
         if (cleanup != null)
         {
-            cleanup.setReferences(_player, _obstaclePool);
+            cleanup.setReferences(_player, _obstaclePool, _gameManager);
         }
     }
 }
