@@ -438,9 +438,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc3f026d91188f41b83566e6146a79e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forwardSpeed: 8
+  _forwardSpeed: 10
   _LaneChangeSpeed: 10
-  _LaneOffSet: 2
+  _LaneOffSet: 6
   _gameManager: {fileID: 1139729234}
 --- !u!1 &254177310
 GameObject:
@@ -653,7 +653,7 @@ PrefabInstance:
     - target: {fileID: -2049929814205202405, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0523e62dc4048be488645a5ac4143f0c, type: 2}
+      objectReference: {fileID: 2100000, guid: 1e24e3e8bcd310041b6f26161a301cd1, type: 2}
     - target: {fileID: 919132149155446097, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
       propertyPath: m_Name
       value: characterMedium
@@ -673,6 +673,62 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041625825208157500, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.21056145
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041625825208157500, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.11782014
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041625825208157500, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8912744
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041625825208157500, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.3839431
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041625825208157500, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -47.224
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041625825208157500, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 155.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041625825208157500, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -4.081
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390307990184296960, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6298341
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390307990184296960, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.28997874
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390307990184296960, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6543737
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390307990184296960, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.3016892
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390307990184296960, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 1.694
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390307990184296960, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -91.409
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390307990184296960, guid: 30eeb6a1fefc3334ab556d07106e6dfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 49.453
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -846,8 +902,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a09bcae5647b3429cbdbf2f55c8644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstaclePrefab: {fileID: 7418797777891601338, guid: 85cffe98bfb815745bd4f666b038230a, type: 3}
-  _initialSize: 20
+  _obstaclePrefabs:
+  - {fileID: 1371114810026573308, guid: 14a91de4b86f876459ee4d9d1e357505, type: 3}
+  - {fileID: 8904301619958158252, guid: 4e4ac5f50f2d7fb45afe1ba106319c57, type: 3}
+  - {fileID: 573990895362888928, guid: fc6d6b0592ab9e5499be129cd0f0acae, type: 3}
+  - {fileID: 9013392666124039857, guid: 2840ae112fa222b40b6a8ac388545b08, type: 3}
+  - {fileID: 952868310062605720, guid: ba49f575522470e4a90d175d6fbea9f0, type: 3}
+  - {fileID: 4919920356968114757, guid: 3fbd09bce18f7c246a450be37cfdc6ec, type: 3}
+  _initialSizePerPrefab: 10
   _obstacleParent: {fileID: 167351380}
 --- !u!4 &590088083
 Transform:
@@ -1746,12 +1808,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 174669915}
-  _obstaclePrefab: {fileID: 7418797777891601338, guid: 85cffe98bfb815745bd4f666b038230a, type: 3}
-  _spawnAheadDistance: 30
-  _minGap: 3
-  _maxGap: 7
-  _laneOffset: 2
-  _obstacleParent: {fileID: 167351380}
+  _spawnAheadDistance: 60
+  _minGap: 10
+  _maxGap: 20
+  _laneOffset: 6
   _obstaclePool: {fileID: 590088082}
   _gameManager: {fileID: 1139729234}
 --- !u!1 &1699639812
