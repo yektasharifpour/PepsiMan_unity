@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _bestScore = PlayerPrefs.GetInt("Best Score" , 0);
+        _bestScore = PlayerPrefs.GetInt("Best Score", 0);
         updateUI();
         setGameOverPanel(false);
     }
